@@ -1,0 +1,14 @@
+version: '1'
+services:
+  client:
+    build:
+      context: .
+      dockerfile: docker/webpack/Dockerfile
+    container_name: client
+    ports:
+      - 3000:3000
+    volumes:
+      - ./:/usr/src/app:rw
+      - app_node_modules:/usr/src/app/node_modules/
+volumes:
+  app_node_modules:
